@@ -1,8 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Layout from "./components/Layout";
 
 function App() {
-  return <>Hello</>;
+  return(
+    <>
+      <Layout/>
+    </>
+  )
 }
 
 export default App;
