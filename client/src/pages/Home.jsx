@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/home.css";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
@@ -16,7 +17,9 @@ const Home = () => {
           <HeroSection />
         </div>
         {/* This is Navigation section */}
-        <div>Navigation section</div>
+        <div>
+          <Navbar/>
+        </div>
         {/* This is Blog section */}
         <div>Blog Section</div>
         {/* This is News letter section */}

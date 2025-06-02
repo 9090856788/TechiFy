@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+
+    .nav_item {
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    .nav_item.active {
+        background-color: #5044E5;
+        color: white;
+        transform: scale(1.1);
+    }
+}
