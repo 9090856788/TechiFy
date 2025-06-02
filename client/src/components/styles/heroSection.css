@@ -1,0 +1,106 @@
+.hero_section {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 0.2px solid green;
+
+  .hero_section_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 70px;
+    width: 273px;
+    height: 2rem;
+    border: 0.3px solid #7a7a7a;
+    border-radius: 2rem;
+    text-align: center;
+    color: #5044e5;
+  }
+  .hero_section_text p {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 204px;
+    height: 1.5rem;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 100%;
+  }
+
+  .hero_section_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    margin-top: 50px;
+  }
+  .hero_section_heading p {
+    font-family: Outfit;
+    font-weight: 500px;
+    font-size: 3rem;
+    line-height: 3.8rem;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  .hero_section_heading span {
+    color: #5044e5;
+  }
+  .hero_section_description {
+    width: 797px;
+    height: 3rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero_section_description p {
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #333333;
+  }
+  .search_container {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-top: 30px;
+    position: relative;
+  }
+  .search_container input[type="text"] {
+    padding: 10px 90px 10px 15px;
+    border: none;
+    outline: none;
+    width: 520px;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  .search_container button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #5044e5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  .search_container button:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: #5044e5;
+  }
+}
