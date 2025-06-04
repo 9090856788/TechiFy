@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   background: #faf8f8;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
@@ -19,6 +20,7 @@
     font-size: 1.2rem;
     color: black;
     padding: 1rem;
+    margin: 0.5rem;
   }
   .loginForm_header span {
     font-family: outfit;
@@ -53,6 +55,26 @@
       transform: translateY(-2px);
     }
   }
+
+  .password-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+  }
+
   .loginForm_header button img {
     width: 1.5rem;
     height: 1.5rem;
@@ -127,6 +149,7 @@
     font-family: outfit;
     font-size: 0.9rem;
     color: #888;
+    margin: 0.5rem;
   }
   .loginForm_register span {
     cursor: pointer;
@@ -134,4 +157,65 @@
       color: rgb(142, 97, 248);
     }
   }
+
+  /* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .loginForm_container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .loginForm_input input,
+  .login_btn,
+  .loginForm_header button {
+    width: 100%;
+  }
+
+  .loginForm_header img {
+    width: 100%;
+  }
 }
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .loginForm_container {
+    width: 90%;
+  }
+
+  .loginForm_input input,
+  .login_btn,
+  .loginForm_header button {
+    width: 100%;
+  }
+}
+
+/* Small laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .loginForm_container {
+    width: 80%;
+  }
+
+  .loginForm_input input,
+  .login_btn,
+  .loginForm_header button {
+    width: 100%;
+  }
+}
+
+/* Medium laptops (1025px to 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .loginForm_container {
+    width: 70%;
+  }
+}
+
+/* Large screens (1367px and up) */
+@media (min-width: 1367px) {
+  .loginForm_container {
+    width: 60%;
+  }
+}
+
+}
+
+
