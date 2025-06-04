@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/header.css";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,8 +12,9 @@ const Header = () => {
           TechiFy
         </div>
         <div>
-          <button onClick={() => navigate("/login")} className="admin-login">
-            Admin Login <FaArrowRightLong />
+          <button onClick={() => navigate("/login")} className="login">
+            <FaArrowRightFromBracket className="arrow_icon" />
+            Login
           </button>
         </div>
       </div>
