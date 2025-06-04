@@ -3,6 +3,7 @@ import "./styles/home.css";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -25,7 +26,9 @@ const Home = () => {
         {/* This is News letter section */}
         <div>News letter Section</div>
         {/* This is Footer section */}
-        <div>Footer</div>
+        <div>
+          {/* <Footer/> */}
+        </div>
       </div>
     </>
   );

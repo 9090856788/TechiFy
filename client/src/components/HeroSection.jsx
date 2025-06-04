@@ -29,7 +29,7 @@ const HeroSection = () => {
           </p>
           <p>it's one word or a thousand, your story starts right here.</p>
         </div>
-        <div class="search_container">
+        <div className="search_container">
           <input type="text" placeholder="Search for blogs" />
           <button type="submit">Search</button>
         </div>
