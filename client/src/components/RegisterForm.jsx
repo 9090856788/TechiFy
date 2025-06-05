@@ -6,19 +6,22 @@ import or from "../assets/or.png";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    emailOrUsername: "",
+    fullName: "",
+    username: "",
+    email: "",
     password: "",
+    phoneNumber: "",
   });
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://user-authentication-system-backend-hazel.vercel.app/api/auth/login`,
+        `https://user-authentication-system-backend-hazel.vercel.app/api/auth/register`,
         {
           method: "POST",
           headers: {
@@ -27,18 +30,18 @@ const LoginForm = () => {
           body: JSON.stringify(formData),
         }
       );
-      const userRes = await response.json();
-      console.log("User Response:", userRes);
-      if (userRes.success) {
-        navigate("/");
+      const userResponse = await response.json();
+      if (response.ok) {
+        console.log("Registration successful:", userResponse);
+        navigate("/login");
       } else {
-        alert(userRes.message);
+        console.error("Registration failed:", userResponse);
+        alert(userResponse.message || "Registration failed. Please try again.");
       }
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Registration failed:", error);
     }
   };
-
   return (
     <>
       <div className="loginForm_container">
@@ -57,13 +60,13 @@ const LoginForm = () => {
             <div className="thirdPartyLogin">
               <button>
                 <FaGoogle />
-                Login with Google
+                Signup with Google
               </button>
             </div>
             <div className="thirdPartyLogin">
               <button>
                 <FaGithub />
-                Login with Github
+                Signup with Github
               </button>
             </div>
           </div>
@@ -75,13 +78,34 @@ const LoginForm = () => {
           <div className="loginForm_input">
             <input
               type="text"
-              placeholder="Enter Username/Email"
-              value={formData.emailOrUsername}
+              placeholder="Enter FullName"
+              value={formData.fullName}
               onChange={(e) =>
-                setFormData({ ...formData, emailOrUsername: e.target.value })
+                setFormData({ ...formData, fullName: e.target.value })
               }
               required
             />
+
+            <input
+              type="text"
+              placeholder="Enter Username"
+              value={formData.username}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
+              required
+            />
+
+            <input
+              type="email"
+              placeholder="Enter Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              required
+            />
+
             <div className="password-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
@@ -99,6 +123,16 @@ const LoginForm = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
+
+            <input
+              type="number"
+              placeholder="Enter Phone Number"
+              value={formData.phoneNumber}
+              onChange={(e) =>
+                setFormData({ ...formData, phoneNumber: e.target.value })
+              }
+              required
+            />
           </div>
           <div className="loginForm_checkbox">
             <div className="rememberMe">
@@ -108,17 +142,16 @@ const LoginForm = () => {
 
             <p onClick={() => navigate("/")}>Forgot Password?</p>
           </div>
-          <button className="login_btn" onClick={handleLogin}>
-            Signin
+          <button className="login_btn" onClick={handleRegister}>
+            Signup
           </button>
         </form>
         <p className="loginForm_register">
-          Don't have an account?{" "}
-          <span onClick={() => navigate("/register")}>Register</span>
+          Have an account? <span onClick={() => navigate("/login")}>Login</span>
         </p>
       </div>
     </>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
