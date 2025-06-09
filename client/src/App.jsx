@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const App = () => {
   return (
     <>
-      App is running!
+      <div>
+        <h1 className="text-amber-300">Welcome to the React App</h1>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default App;
