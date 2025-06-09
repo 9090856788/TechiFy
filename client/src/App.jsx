@@ -1,11 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <>
-      <div>
-        <h1 className="text-amber-300">Welcome to the React App</h1>
-      </div>
+      <Router>
+        <Routes>
+          {/* Default Routes */}
+          
+          {/* Admin Routes */}
+        </Routes>
+      </Router>
     </>
   );
 };
